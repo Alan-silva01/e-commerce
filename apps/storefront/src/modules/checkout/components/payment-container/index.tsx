@@ -15,7 +15,10 @@ type PaymentContainerProps = {
   paymentProviderId: string
   selectedPaymentOptionId: string | null
   disabled?: boolean
-  paymentInfoMap: Record<string, { title: string; icon: JSX.Element }>
+  paymentInfoMap: Record<
+    string,
+    { title: string; icon: React.ComponentType | JSX.Element }
+  >
   children?: React.ReactNode
 }
 
@@ -55,7 +58,9 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
           {(() => {
             const Icon = paymentInfoMap[paymentProviderId]?.icon
             if (!Icon) return null
-            return typeof Icon === "function" ? <Icon /> : Icon
+            if (React.isValidElement(Icon)) return Icon
+            const Component = Icon as React.ComponentType
+            return <Component />
           })()}
         </span>
       </div>

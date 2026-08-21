@@ -1,3 +1,4 @@
+import React from "react"
 import { Container, Heading, Text } from "@medusajs/ui"
 
 import { isStripeLike, paymentInfoMap } from "@lib/constants"
@@ -40,7 +41,9 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
                   {(() => {
                     const Icon = paymentInfoMap[payment.provider_id]?.icon
                     if (!Icon) return null
-                    return typeof Icon === "function" ? <Icon /> : Icon
+                    if (React.isValidElement(Icon)) return Icon
+                    const Component = Icon as React.ComponentType
+                    return <Component />
                   })()}
                 </Container>
                 <Text data-testid="payment-amount">

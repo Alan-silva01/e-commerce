@@ -11,7 +11,7 @@ import PaymentContainer, {
 } from "@modules/checkout/components/payment-container"
 import Divider from "@modules/common/components/divider"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 
 const Payment = ({
   cart,
@@ -227,7 +227,9 @@ const Payment = ({
                     {(() => {
                       const Icon = paymentInfoMap[selectedPaymentMethod]?.icon
                       if (!Icon) return <CreditCard />
-                      return typeof Icon === "function" ? <Icon /> : Icon
+                      if (React.isValidElement(Icon)) return Icon
+                      const Component = Icon as React.ComponentType
+                      return <Component />
                     })()}
                   </Container>
                   <Text>
