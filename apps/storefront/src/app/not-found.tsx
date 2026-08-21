@@ -1,7 +1,7 @@
-import { ArrowUpRightMini } from "@medusajs/icons"
-import { Text } from "@medusajs/ui"
 import { Metadata } from "next"
 import Link from "next/link"
+
+export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
   title: "404",
@@ -16,14 +16,10 @@ export default function NotFound() {
         The page you tried to access does not exist.
       </p>
       <Link
-        className="flex gap-x-1 items-center group"
+        className="flex gap-x-1 items-center group text-ui-fg-interactive underline"
         href="/"
       >
-        <Text className="text-ui-fg-interactive">Go to frontpage</Text>
-        <ArrowUpRightMini
-          className="group-hover:rotate-45 ease-in-out duration-150"
-          color="var(--fg-interactive)"
-        />
+        Go to frontpage →
       </Link>
     </div>
   )

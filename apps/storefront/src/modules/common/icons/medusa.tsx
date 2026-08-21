@@ -2,11 +2,11 @@ import React from "react"
 
 import { IconProps } from "types/icon"
 
-const Medusa: React.FC<IconProps> = ({
+const Medusa = ({
   size = "20",
   color = "#9CA3AF",
   ...attributes
-}) => {
+}: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -52,7 +52,11 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
           )}
         </div>
         <span className="justify-self-end text-ui-fg-base">
-          {paymentInfoMap[paymentProviderId]?.icon}
+          {(() => {
+            const Icon = paymentInfoMap[paymentProviderId]?.icon
+            if (!Icon) return null
+            return typeof Icon === "function" ? <Icon /> : Icon
+          })()}
         </span>
       </div>
       {isManual(paymentProviderId) && isDevelopment && (

@@ -2,11 +2,11 @@ import React from "react"
 
 import { IconProps } from "types/icon"
 
-const PlaceholderImage: React.FC<IconProps> = ({
+const PlaceholderImage = ({
   size = "20",
   color = "currentColor",
   ...attributes
-}) => {
+}: IconProps) => {
   return (
     <svg
       width={size}

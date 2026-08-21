@@ -25,7 +25,7 @@ export default async function Home(props: {
   })
 
   if (!collections || !region) {
-    return null
+    return <Hero />
   }
 
   return (

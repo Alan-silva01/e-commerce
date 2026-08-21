@@ -224,9 +224,11 @@ const Payment = ({
                   data-testid="payment-details-summary"
                 >
                   <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
-                    {paymentInfoMap[selectedPaymentMethod]?.icon || (
-                      <CreditCard />
-                    )}
+                    {(() => {
+                      const Icon = paymentInfoMap[selectedPaymentMethod]?.icon
+                      if (!Icon) return <CreditCard />
+                      return typeof Icon === "function" ? <Icon /> : Icon
+                    })()}
                   </Container>
                   <Text>
                     {isStripeLike(selectedPaymentMethod) && cardBrand

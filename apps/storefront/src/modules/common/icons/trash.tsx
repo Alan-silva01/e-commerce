@@ -2,11 +2,11 @@ import React from "react"
 
 import { IconProps } from "types/icon"
 
-const Trash: React.FC<IconProps> = ({
+const Trash = ({
   size = "16",
   color = "currentColor",
   ...attributes
-}) => {
+}: IconProps) => {
   return (
     <svg
       width={size}

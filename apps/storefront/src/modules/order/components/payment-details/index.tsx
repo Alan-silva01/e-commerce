@@ -37,7 +37,11 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
               </Text>
               <div className="flex gap-2 txt-medium text-ui-fg-subtle items-center">
                 <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
-                  {paymentInfoMap[payment.provider_id].icon}
+                  {(() => {
+                    const Icon = paymentInfoMap[payment.provider_id]?.icon
+                    if (!Icon) return null
+                    return typeof Icon === "function" ? <Icon /> : Icon
+                  })()}
                 </Container>
                 <Text data-testid="payment-amount">
                   {isStripeLike(payment.provider_id) && payment.data?.card_last4
