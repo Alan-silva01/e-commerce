@@ -12,10 +12,10 @@ import { HttpTypes } from "@medusajs/types"
 import { Locale } from "@lib/data/locales"
 
 const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Account: "/account",
-  Cart: "/cart",
+  Início: "/",
+  Loja: "/store",
+  "Minha Conta": "/account",
+  Carrinho: "/cart",
 }
 
 type SideMenuProps = {
