@@ -7,14 +7,14 @@ type AlmaLogoProps = {
 }
 
 export default function AlmaLogo({
-  className = "text-current h-6 w-auto",
+  className = "text-current h-7 w-auto",
   width,
   height,
 }: AlmaLogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 200 60"
+      viewBox="12 18 174 25"
       fill="currentColor"
       className={className}
       width={width}
