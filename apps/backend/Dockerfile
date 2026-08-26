@@ -18,4 +18,4 @@ COPY --from=builder /app/.medusa/server ./
 RUN npm install --omit=dev --legacy-peer-deps
 
 EXPOSE 9000
-CMD ["npx", "medusa", "start"]
+CMD npx medusa db:migrate && npx medusa start
