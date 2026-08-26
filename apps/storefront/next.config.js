@@ -46,10 +46,12 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "pub-a0c7ea06850a4b19aa806d8d44123ccb.r2.dev",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "**.r2.dev",
+        hostname: "*.r2.dev",
+        pathname: "/**",
       },
       ...(S3_HOSTNAME && S3_PATHNAME
         ? [
