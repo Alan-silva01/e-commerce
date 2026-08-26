@@ -34,7 +34,7 @@ export default async function Nav() {
               className="flex items-center hover:opacity-70 transition-opacity"
               data-testid="nav-store-link"
             >
-              <AlmaLogo className="h-5 sm:h-5.5 w-auto text-black" />
+              <AlmaLogo className="h-5.5 sm:h-6 w-auto text-black" />
             </LocalizedClientLink>
           </div>
 
