@@ -4,6 +4,7 @@ import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import AlmaLogo from "@modules/common/components/alma-logo"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -18,9 +19,9 @@ export default async function Footer() {
           <div className="flex flex-col gap-4">
             <LocalizedClientLink
               href="/"
-              className="text-[22px] font-black tracking-tight text-black uppercase"
+              className="flex items-center hover:opacity-70 transition-opacity"
             >
-              ALMA
+              <AlmaLogo className="h-6 w-auto text-black" />
             </LocalizedClientLink>
             <Text className="text-xs text-neutral-500 max-w-[280px] leading-relaxed">
               Sua loja exclusiva de moda e estilo. Pecas curadas com qualidade e autenticidade.

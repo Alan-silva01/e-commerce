@@ -8,6 +8,8 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 
+import AlmaLogo from "@modules/common/components/alma-logo"
+
 export default async function Nav() {
   const [regions, locales, currentLocale] = await Promise.all([
     listRegions().then((regions: StoreRegion[]) => regions).catch(() => null),
@@ -29,10 +31,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="text-[22px] font-black tracking-tight text-black uppercase hover:opacity-70 transition-opacity"
+              className="flex items-center hover:opacity-70 transition-opacity"
               data-testid="nav-store-link"
             >
-              ALMA
+              <AlmaLogo className="h-6 w-auto text-black" />
             </LocalizedClientLink>
           </div>
 
