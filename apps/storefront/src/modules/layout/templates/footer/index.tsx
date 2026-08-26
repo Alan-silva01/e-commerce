@@ -12,21 +12,24 @@ export default async function Footer() {
   const productCategories = await listCategories()
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-[#ebebeb] w-full bg-white">
       <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
+        <div className="flex flex-col gap-y-8 xsmall:flex-row items-start justify-between py-16">
+          <div className="flex flex-col gap-4">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="text-[22px] font-black tracking-tight text-black uppercase"
             >
-              Alma
+              ALMA
             </LocalizedClientLink>
+            <Text className="text-xs text-neutral-500 max-w-[280px] leading-relaxed">
+              Sua loja exclusiva de moda e estilo. Pecas curadas com qualidade e autenticidade.
+            </Text>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {productCategories && productCategories?.length > 0 && (
-              <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+              <div className="flex flex-col gap-y-3">
+                <span className="text-[11px] uppercase tracking-widest font-bold text-black">
                   Categorias
                 </span>
                 <ul
@@ -47,12 +50,12 @@ export default async function Footer() {
 
                     return (
                       <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
+                        className="flex flex-col gap-2 text-neutral-500 txt-small"
                         key={c.id}
                       >
                         <LocalizedClientLink
                           className={clx(
-                            "hover:text-ui-fg-base",
+                            "hover:text-black transition-colors",
                             children && "txt-small-plus"
                           )}
                           href={`/categories/${c.handle}`}
@@ -66,7 +69,7 @@ export default async function Footer() {
                               children.map((child) => (
                                 <li key={child.id}>
                                   <LocalizedClientLink
-                                    className="hover:text-ui-fg-base"
+                                    className="hover:text-black transition-colors"
                                     href={`/categories/${child.handle}`}
                                     data-testid="category-link"
                                   >
@@ -83,13 +86,13 @@ export default async function Footer() {
               </div>
             )}
             {collections && collections.length > 0 && (
-              <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Coleções
+              <div className="flex flex-col gap-y-3">
+                <span className="text-[11px] uppercase tracking-widest font-bold text-black">
+                  Colecoes
                 </span>
                 <ul
                   className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 gap-2 text-neutral-500 txt-small",
                     {
                       "grid-cols-2": (collections?.length || 0) > 3,
                     }
@@ -98,7 +101,7 @@ export default async function Footer() {
                   {collections?.slice(0, 6).map((c) => (
                     <li key={c.id}>
                       <LocalizedClientLink
-                        className="hover:text-ui-fg-base"
+                        className="hover:text-black transition-colors"
                         href={`/collections/${c.handle}`}
                       >
                         {c.title}
@@ -108,46 +111,42 @@ export default async function Footer() {
                 </ul>
               </div>
             )}
-            <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
-              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
+            <div className="flex flex-col gap-y-3">
+              <span className="text-[11px] uppercase tracking-widest font-bold text-black">
+                Links
+              </span>
+              <ul className="grid grid-cols-1 gap-y-2 text-neutral-500 txt-small">
                 <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                  <LocalizedClientLink
+                    href="/store"
+                    className="hover:text-black transition-colors"
                   >
-                    GitHub
-                  </a>
+                    Loja
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                  <LocalizedClientLink
+                    href="/account"
+                    className="hover:text-black transition-colors"
                   >
-                    Documentation
-                  </a>
+                    Minha Conta
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
+                  <LocalizedClientLink
+                    href="/cart"
+                    className="hover:text-black transition-colors"
                   >
-                    Source code
-                  </a>
+                    Carrinho
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
+        <div className="flex w-full py-6 border-t border-[#ebebeb] justify-between items-center text-neutral-400">
+          <Text className="text-xs">
+            &copy; {new Date().getFullYear()} Alma Store. Todos os direitos reservados.
           </Text>
           <MedusaCTA />
         </div>
