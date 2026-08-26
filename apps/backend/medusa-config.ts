@@ -4,6 +4,7 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
   admin: {
+    backendUrl: process.env.MEDUSA_BACKEND_URL || "https://alma-backend.ljiuf9.easypanel.host",
     disable: process.env.SHOULD_DISABLE_ADMIN === 'true',
   },
   projectConfig: {
