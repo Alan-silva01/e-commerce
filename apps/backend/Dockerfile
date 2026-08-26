@@ -15,7 +15,7 @@ FROM node:20-slim
 WORKDIR /app
 
 COPY --from=builder /app/.medusa/server ./
-RUN npm install --omit=dev
+RUN npm install --omit=dev --legacy-peer-deps
 
 EXPOSE 9000
 CMD ["npx", "medusa", "start"]
