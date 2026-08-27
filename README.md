@@ -86,6 +86,11 @@ O **Alma Store** foi construído a partir da base do **Medusa V2** (arquitetura 
   - **Loja Online**: [https://alma-storefront.ljiuf9.easypanel.host/br](https://alma-storefront.ljiuf9.easypanel.host/br)
   - **Painel Admin**: [https://alma-backend.ljiuf9.easypanel.host/app](https://alma-backend.ljiuf9.easypanel.host/app)
 
+#### Acesso de Demonstração (Painel Admin)
+Para testar a gestão de produtos, inventário e pedidos ao vivo no painel administrativo:
+- **E-mail**: `teste@teste.com`
+- **Senha**: `teste123`
+
 ### 2. Redesign do Storefront (Estilo Grailed / Minimalista)
 - Identidade visual moderna inspirada na estética minimalista da *Grailed*.
 - **Header ultra-slim**, ticker de novidades/frete, barra de categorias compacta e tipografia marcante.
