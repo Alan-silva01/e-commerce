@@ -1,158 +1,104 @@
-<p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
-</p>
-<h1 align="center">
-  Medusa DTC Starter
-</h1>
-
-<h4 align="center">
-  <a href="https://docs.medusajs.com">Documentation</a> |
-  <a href="https://www.medusajs.com">Website</a>
-</h4>
+# 🛍️ Alma Store — E-commerce Full Stack
 
 <p align="center">
-  Building blocks for digital commerce
+  <b>Um projeto prático e completo de E-commerce moderno desenvolvido para aprendizado e aplicação real.</b>
 </p>
+
 <p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/develop/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Medusa is released under the MIT license." />
-  </a>
-  <a href="https://circleci.com/gh/medusajs/medusa">
-    <img src="https://circleci.com/gh/medusajs/medusa.svg?style=shield" alt="Current CircleCI build status." />
-  </a>
-  <a href="https://github.com/medusajs/medusa/blob/develop/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-    <a href="https://www.producthunt.com/posts/medusa"><img src="https://img.shields.io/badge/Product%20Hunt-%231%20Product%20of%20the%20Day-%23DA552E" alt="Product Hunt"></a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
+  <img src="https://img.shields.io/badge/Next.js%2015-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Medusa%20v2-8A2BE2?style=for-the-badge&logo=medusa&logoColor=white" alt="MedusaJS" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare R2" />
+  <img src="https://img.shields.io/badge/Docker_%2F_EasyPanel-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker EasyPanel" />
 </p>
 
-# Medusa DTC Starter
+---
 
-A production-ready monorepo starter for direct-to-consumer ecommerce stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
+## 📖 Sobre o Projeto & Minha Jornada
 
-## Features
+> *"Não sou desenvolvedor de formação, mas sou um apaixonado por tecnologia e programação. Este repositório representa minha jornada prática de colocar a mão na massa: pesquisando, configurando servidores, ajustando código, integrando serviços e aprendendo como construir e manter um e-commerce profissional do zero à produção."*
 
-- All of [Medusa's commerce features](https://docs.medusajs.com/resources/commerce-modules)
-- Multi-region support with automatic country detection
-- Product catalog with variant selection
-- Cart with promotion codes
-- Multi-step checkout with shipping and payment
-- Customer accounts with order history and address management
-- Order transfer between accounts
+O **Alma Store** foi construído a partir da base do **Medusa V2** (arquitetura headless) com **Next.js 15**. Ao longo do desenvolvimento, venho customizando a experiência visual, otimizando o carregamento de mídia na nuvem e subindo toda a infraestrutura em produção real.
 
-## Getting Started
+---
 
-### Deploy with Medusa Cloud
+## 🛠️ O que já foi implementado & Infraestrutura
 
-The fastest way to get started is deploying with [Medusa Cloud](https://cloud.medusajs.com):
+### 🌐 1. Deploy em Produção (VPS + EasyPanel)
+- Servidor VPS configurado com **EasyPanel** e orquestração em containers **Docker**.
+- **Backend (Medusa v2)** rodando com PostgreSQL e Redis.
+- **Storefront (Next.js 15)** com Server Side Rendering (SSR) e revalidação de dados incremental (ISR).
 
-1. [Create a Medusa Cloud account](https://cloud.medusajs.com)
-2. Deploy this starter directly from your dashboard
+### 🎨 2. Redesign do Storefront (Estilo Grailed / Minimalista)
+- Identidade visual moderna inspirada na estética minimalista da *Grailed*.
+- **Header ultra-slim**, ticker de novidades/frete, barra de categorias compacta e tipografia marcante.
+- Logo vetorial (`SVG`) limpa e dinâmica com suporte a inversão de cores (`currentColor`).
+- Grade de produtos flat, sem sombras pesadas e com navegação fluida.
 
-### Local Installation
+### ☁️ 3. Storage de Alta Performance com Cloudflare R2
+- Conexão do módulo `@medusajs/medusa/file-s3` apontando para bucket **Cloudflare R2**.
+- CDN global com latência ultra-baixa no Brasil e taxa de transferência (*egress*) zerada.
+- Otimização automática de imagens via Next.js Image Optimizer.
 
-> **Prerequisites:
->
-> - [Node.js](https://nodejs.org/) v20+
-> - [PostgreSQL](https://www.postgresql.org/) v15+
-> - [pnpm](https://pnpm.io/) v10+
+### 📦 4. Gestão de Catálogo
+- Cadastro de produtos, múltiplas fotos em alta resolução, opções de tamanhos, variantes e controle de estoque direto pelo painel administrativo.
 
-1. Clone the repository and install dependencies:
+---
 
-```bash
-git clone https://github.com/medusajs/dtc-starter.git
-cd dtc-starter
-pnpm install
+## 🗺️ Próximos Passos (Roadmap)
+
+- [x] Configuração de VPS e deploy do monorepo via Docker/EasyPanel
+- [x] Redesign do layout do Storefront (estilo minimalista)
+- [x] Integração de Storage S3/Cloudflare R2 para fotos de produtos
+- [ ] Integração com gateway de pagamentos (Stripe / Mercado Pago / Asaas)
+- [ ] Configuração de métodos de envio e cálculo de frete nacional (Correios / Melhor Envio)
+- [ ] Autenticação de clientes e fluxo completo de checkout e rastreio de pedidos
+
+---
+
+## 🏗️ Estrutura do Monorepo (Turborepo)
+
+```text
+.
+├── apps/
+│   ├── backend/          # API Medusa v2 (@dtc/backend)
+│   │   ├── medusa-config.ts  # Configuração de Banco, CORS, Módulos e Cloudflare R2
+│   │   └── src/              # Customizações de rotas, workflows e admin
+│   └── storefront/       # Frontend Next.js 15 App Router (@dtc/storefront)
+│       ├── src/app/          # Rotas e páginas (Home, Produtos, Categorias, Cart)
+│       ├── src/modules/      # Componentes modulares, UI, Header, Footer, Galeria
+│       └── next.config.js    # Otimização de imagens e domínios remotos R2
+├── turbo.json            # Pipeline do Turborepo (build, dev, lint)
+└── package.json          # Gerenciamento de dependências
 ```
 
-2. Set up environment variables for the backend:
+---
 
+## 💻 Como Rodar Localmente
+
+### 1. Clonar o repositório
 ```bash
-cp apps/backend/.env.template apps/backend/.env
+git clone https://github.com/Alan-silva01/e-commerce.git
+cd e-commerce
+npm install
 ```
 
-3. Set the database URL in `apps/backend.env`:
+### 2. Configurar variáveis de ambiente
+- Copie `apps/backend/.env.template` para `apps/backend/.env` e preencha as credenciais do banco e do Cloudflare R2.
+- Copie `apps/storefront/.env.template` para `apps/storefront/.env.local`.
 
+### 3. Iniciar em desenvolvimento
 ```bash
-# Replace with actual database URL, make sure the database exists.
-DATABASE_URL=postgres://postgres:@localhost:5432/medusa-dtc-starter
+# Rodar todos os apps
+npm run dev
+
+# Ou rodar apenas o Storefront
+npm run storefront:dev
 ```
 
-4. Run migrations:
+---
 
-```bash
-cd apps/backend
-pnpm medusa db:migrate
-```
-
-5. Add admin user:
-
-```bash
-cd apps/backend
-pnpm medusa user -e admin@test.com -p supersecret
-```
-
-6. Start Medusa backend:
-
-```bash
-cd apps/backend
-pnpm dev
-```
-
-7. Open the admin dashboard at `localhost:9000/app` and log in. Retrieve your publishable API key at Settings > Publishable API key.
-
-8. Set up environment variables for the storefront:
-
-```bash
-cp apps/storefront/.env.template apps/storefront/.env.local
-```
-
-9. Update `apps/storefront/.env.local` with your Medusa publishable API key:
-
-```bash
-NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=pk_6c3...
-```
-
-10.  Start storefront:
-
-```bash
-cd apps/storefront
-pnpm dev
-```
-
-The storefront runs on `http://localhost:8000`.
-
-You can slo run the following command from the root to start both backend and storefront:
-
-```bash
-pnpm dev
-```
-
-## Configuration
-
-The storefront is configured via environment variables in `apps/storefront/.env.local`:
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` | Publishable API key from your Medusa backend | — |
-| `NEXT_PUBLIC_MEDUSA_BACKEND_URL` | URL of your Medusa backend | `http://localhost:9000` |
-| `NEXT_PUBLIC_DEFAULT_REGION` | Default region country code | `dk` |
-| `NEXT_PUBLIC_BASE_URL` | Base URL of the storefront | `https://localhost:8000` |
-| `NEXT_PUBLIC_STRIPE_KEY` | Stripe publishable key (optional) | — |
-
-## Resources
-
-- [Medusa Documentation](https://docs.medusajs.com)
-- [Medusa Cloud](https://cloud.medusajs.com)
+<p align="center">
+  Desenvolvido com dedicação por <b>Alan Silva</b> 🚀
+</p>
