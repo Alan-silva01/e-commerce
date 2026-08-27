@@ -3,10 +3,14 @@ import { Container } from "@medusajs/ui"
 import Image from "next/image"
 
 type ImageGalleryProps = {
-  images: HttpTypes.StoreProductImage[]
+  images?: HttpTypes.StoreProductImage[]
 }
 
-const ImageGallery = ({ images }: ImageGalleryProps) => {
+const ImageGallery = ({ images = [] }: ImageGalleryProps) => {
+  if (!images || images.length === 0) {
+    return null
+  }
+
   return (
     <div className="flex items-start relative">
       <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
