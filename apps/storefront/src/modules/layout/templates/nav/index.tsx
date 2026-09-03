@@ -117,7 +117,7 @@ export default async function Nav() {
       </div>
 
       {/* Announcement ticker - ultra slim */}
-      <div className="bg-[#24963C] overflow-hidden whitespace-nowrap">
+      <div className="bg-black border-b border-neutral-800 overflow-hidden whitespace-nowrap">
         <div className="animate-ticker inline-flex">
           {Array.from({ length: 8 }).map((_, i) => (
             <span key={i} className="text-white text-[11px] font-semibold uppercase tracking-wider px-6 py-1 inline-block">
