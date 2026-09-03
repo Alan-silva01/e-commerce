@@ -10,10 +10,10 @@ export const getStore = async () => {
   }
 
   return sdk.client
-    .fetch<{ store: HttpTypes.AdminStore }>(`/store`, {
+    .fetch<{ store: HttpTypes.AdminStore }>(`/store/details`, {
       method: "GET",
       next,
-      cache: "force-cache",
+      cache: "no-store",
     })
     .then(({ store }) => store)
     .catch(() => null)
