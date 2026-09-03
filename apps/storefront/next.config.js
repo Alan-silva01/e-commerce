@@ -53,6 +53,11 @@ const nextConfig = {
         hostname: "*.r2.dev",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
       ...(S3_HOSTNAME && S3_PATHNAME
         ? [
             {
